@@ -1,0 +1,15 @@
+= OpenVPN IP Filter
+
+Simple and small script (client-connect) to restrict incoming connections from specific IP addresses only. All illegal connections to OpenVPN server are rejected.
+
+== ovpn-ip-filter.txt
+This file contains information about client Common Names and allowed IP ranges.
+
+Format:
+cn ip_address/netmask
+
+E.g. to restrict connections for client test_cn to 91.233.244.1 only, the file should contain:
+test_cn 91.233.244.1/32
+
+If you want to allow whole subnet 91.233.244.1-91.233.244.255 (for clients with dynmic IP), you should write:
+test_cn 91.233.244.1/24
